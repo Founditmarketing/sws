@@ -9,7 +9,6 @@ import { FeaturedProjects } from "@/components/sections/featured-projects";
 import { FeaturedCaseStudy } from "@/components/sections/featured-case-study";
 import { ByTheNumbers } from "@/components/sections/by-the-numbers";
 import { FleetSnapshot } from "@/components/sections/fleet-snapshot";
-import { SafetyBand } from "@/components/sections/safety-band";
 import { CoverageMap } from "@/components/sections/coverage-map";
 import { QuickRfqBand } from "@/components/sections/quick-rfq-band";
 
@@ -30,7 +29,6 @@ export default function HomePage() {
       {/* Round 5 audit fix #3: Safety / bonding promoted directly under the
           TrustedBy marquee so it sits as the second proof block under the hero
           (one click from the eyebrow pill which now anchors to #safety). */}
-      <SafetyBand />
       <CapabilitiesGrid />
       <FounderQuote />
       <MarketsGrid />

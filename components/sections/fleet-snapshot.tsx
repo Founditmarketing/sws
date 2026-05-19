@@ -148,7 +148,7 @@ export function FleetSnapshot() {
               </div>
             </dl>
             <p className="mt-3 font-mono text-[10px] uppercase tracking-[0.22em] text-graphite-300">
-              Caterpillar - John Deere - Komatsu - Volvo
+              Featuring heavy tractors with scrapers &amp; pans
             </p>
             <Link
               href="/fleet"
