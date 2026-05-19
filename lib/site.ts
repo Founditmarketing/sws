@@ -155,6 +155,12 @@ export function getSiteOrigin(): string {
     const fromEnv = parseHttpOrigin(env);
     if (fromEnv) return fromEnv;
   }
+  
+  const vercelEnv = process.env.VERCEL_PROJECT_PRODUCTION_URL || process.env.VERCEL_URL || process.env.NEXT_PUBLIC_VERCEL_URL;
+  if (vercelEnv) {
+    return `https://${vercelEnv}`;
+  }
+
   try {
     return new URL(siteConfig.url).origin;
   } catch {
