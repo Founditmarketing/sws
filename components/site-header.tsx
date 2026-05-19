@@ -113,8 +113,7 @@ export function SiteHeader() {
           </div>
         </div>
       </SiteReveal>
-
-      </header>
+      </motion.header>
       <AnimatePresence>
         {open && (
           <>
