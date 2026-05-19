@@ -225,7 +225,9 @@ function FleetCard({ group, index }: { group: FleetCategoryGroup; index: number 
           alt={group.imageAlt}
           fill
           sizes="(min-width: 768px) 32vw, 80vw"
-          className="object-cover transition-transform duration-700 ease-out md:group-hover:scale-105"
+          className={`transition-transform duration-700 ease-out md:group-hover:scale-105 ${
+            group.category === "Excavators" ? "object-cover object-left" : "object-cover object-center"
+          }`}
           priority={index === 0}
         />
         <div

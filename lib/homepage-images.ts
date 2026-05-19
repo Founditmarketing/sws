@@ -21,7 +21,7 @@ export const fleetCategoryHeroSrc: Record<FleetItem["category"], string> = {
   Dozers:
     "/img/fleet-dozers.webp",
   Excavators:
-    "/img/fleet-excavators.webp",
+    "/img/fleet-excavators.jpg",
   Graders:
     "/img/fleet-graders.webp",
   "Articulated Trucks":
