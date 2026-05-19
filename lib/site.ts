@@ -47,7 +47,7 @@ export const siteConfig: {
   description:
     "Sitework Specialist is a commercial site work contractor based in Central Louisiana, delivering mass excavation, grading, land clearing, erosion control, retaining structures, and complete pad sites for industrial, energy, healthcare, municipal, and commercial development clients.",
   url: "https://siteworkspecialistllc.com",
-  ogImage: "/og.png",
+  ogImage: "/newsiteworkpics/siteworkprojectpic4.JPEG",
   phone: "(318) 484-8931",
   phoneHref: "tel:+13184848931",
   inquiryEmail: INQUIRY_EMAIL,
