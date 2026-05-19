@@ -5,21 +5,20 @@ import Link from "next/link";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
-import { fleet, type FleetItem } from "@/lib/content/fleet";
+import { fleet, type FleetCategory } from "@/lib/content/fleet";
 import { fleetCategoryHeroSrc } from "@/lib/homepage-images";
 import { AnimatedNumber } from "@/components/ui/animated-number";
 import { SectionHeader } from "@/components/brand/section-header";
 
 type FleetCategoryGroup = {
-  category: FleetItem["category"];
+  title: FleetCategory["title"];
   image: string;
   imageAlt: string;
-  totalCount: number;
-  largestCapacity: string;
-  models: { make: string; model: string; qty: number; capacity: string }[];
+  count: number;
+  description: string;
 };
 
-const categoryImages: Record<FleetItem["category"], { src: string; alt: string }> = {
+const categoryImages: Record<FleetCategory["title"], { src: string; alt: string }> = {
   Dozers: {
     src: fleetCategoryHeroSrc.Dozers,
     alt: "Caterpillar D8T dozer pushing material on a graded jobsite",
@@ -36,6 +35,10 @@ const categoryImages: Record<FleetItem["category"], { src: string; alt: string }
     src: fleetCategoryHeroSrc["Articulated Trucks"],
     alt: "Articulated haul truck offloading material at a stockpile",
   },
+  Tractors: {
+    src: fleetCategoryHeroSrc.Tractors,
+    alt: "Heavy tractor equipped with scrapers and pans",
+  },
   Compaction: {
     src: fleetCategoryHeroSrc.Compaction,
     alt: "Smooth-drum and padfoot compactors on a building pad",
@@ -47,31 +50,14 @@ const categoryImages: Record<FleetItem["category"], { src: string; alt: string }
 };
 
 function buildGroups(): FleetCategoryGroup[] {
-  const order: FleetItem["category"][] = [
-    "Dozers",
-    "Excavators",
-    "Graders",
-    "Articulated Trucks",
-    "Compaction",
-    "Support",
-  ];
-  return order.map((category) => {
-    const items = fleet.filter((f) => f.category === category);
-    const totalCount = items.reduce((sum, f) => sum + f.qty, 0);
-    const largestCapacity = items[0]?.capacity ?? "";
-    const meta = categoryImages[category];
+  return fleet.map((cat) => {
+    const meta = categoryImages[cat.title];
     return {
-      category,
+      title: cat.title,
       image: meta.src,
       imageAlt: meta.alt,
-      totalCount,
-      largestCapacity,
-      models: items.map((i) => ({
-        make: i.make,
-        model: i.model,
-        qty: i.qty,
-        capacity: i.capacity,
-      })),
+      count: cat.count,
+      description: cat.description,
     };
   });
 }
@@ -179,7 +165,7 @@ export function FleetSnapshot() {
         >
           {groups.map((g, i) => (
             <li
-              key={g.category}
+              key={g.title}
               className="fleet-snap relative flex-none"
               style={{
                 width: "min(80vw, 360px)",
@@ -227,7 +213,7 @@ function FleetCard({ group, index }: { group: FleetCategoryGroup; index: number 
           fill
           sizes="(min-width: 768px) 32vw, 80vw"
           className={`transition-transform duration-700 ease-out md:group-hover:scale-105 ${
-            group.category === "Excavators" ? "object-cover object-left" : "object-cover object-center"
+            group.title === "Excavators" ? "object-cover object-left" : "object-cover object-center"
           }`}
           priority={index === 0}
         />
@@ -246,35 +232,18 @@ function FleetCard({ group, index }: { group: FleetCategoryGroup; index: number 
             </span>
           </span>
           <span className="font-mono text-[10px] uppercase tracking-[0.22em] text-graphite-300">
-            x{group.totalCount}
+            x{group.count}
           </span>
         </div>
 
         <div className="flex flex-col gap-3">
           <h3 className="font-display text-3xl font-extrabold leading-[0.95] tracking-tight text-bone-100 md:text-4xl">
-            {group.category}
+            {group.title}
           </h3>
 
-          <ul className="flex flex-col gap-1 border-t border-bone-100/15 pt-3">
-            {group.models.slice(0, 3).map((m) => (
-              <li
-                key={`${m.make}-${m.model}`}
-                className="flex items-baseline justify-between gap-3 font-mono text-[10px] uppercase tracking-[0.16em] text-graphite-200"
-              >
-                <span className="truncate text-bone-100">
-                  {m.make} {m.model}
-                </span>
-                <span className="flex-none text-graphite-300">
-                  {m.capacity} &middot; x{m.qty}
-                </span>
-              </li>
-            ))}
-            {group.models.length > 3 ? (
-              <li className="font-mono text-[9px] uppercase tracking-[0.22em] text-graphite-400">
-                + {group.models.length - 3} more configurations
-              </li>
-            ) : null}
-          </ul>
+          <p className="border-t border-bone-100/15 pt-3 font-mono text-[11px] uppercase tracking-[0.16em] leading-relaxed text-graphite-300">
+            {group.description}
+          </p>
         </div>
       </div>
     </article>

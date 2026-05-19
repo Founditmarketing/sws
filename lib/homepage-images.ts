@@ -1,4 +1,4 @@
-import type { FleetItem } from "@/lib/content/fleet";
+import type { FleetCategory } from "@/lib/content/fleet";
 
 /**
  * Homepage section art uses remote Unsplash sources so `next/image` can optimize
@@ -17,7 +17,7 @@ export const featuredCaseStudyHero = "/img/case-study-substation.jpg";
 // company decals visible. The current Unsplash sources are stronger than
 // generic stock and shippable for now, but they should be swapped during the
 // half-day shoot. See README "Open items" #3.
-export const fleetCategoryHeroSrc: Record<FleetItem["category"], string> = {
+export const fleetCategoryHeroSrc: Record<FleetCategory["title"], string> = {
   Dozers:
     "/img/fleet-dozers.webp",
   Excavators:
@@ -26,6 +26,8 @@ export const fleetCategoryHeroSrc: Record<FleetItem["category"], string> = {
     "/img/fleet-graders.webp",
   "Articulated Trucks":
     "/img/fleet-trucks.webp",
+  Tractors:
+    "/img/fleet-tractors.jpg",
   Compaction:
     "/img/fleet-compaction.webp",
   Support:
