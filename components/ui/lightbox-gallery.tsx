@@ -81,7 +81,7 @@ export function LightboxGallery({
                 {video ? (
                   <div className="relative aspect-[4/3] w-full overflow-hidden bg-graphite-900">
                     <video
-                      src={src}
+                      src={`${src}#t=0.001`}
                       className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                       muted
                       loop
