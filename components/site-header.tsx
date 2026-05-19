@@ -10,7 +10,7 @@ import { siteConfig } from "@/lib/site";
 import { cn } from "@/lib/utils";
 import { Logo } from "@/components/brand/logo";
 import { CtaButton } from "@/components/brand/cta-button";
-import { SiteReveal } from "@/components/ui/site-reveal";
+import { SiteReveal, hasInitialLoadFinished } from "@/components/ui/site-reveal";
 
 export function SiteHeader() {
   const pathname = usePathname();
@@ -37,7 +37,10 @@ export function SiteHeader() {
 
   return (
     <>
-      <header
+      <motion.header
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut", delay: typeof window !== "undefined" && hasInitialLoadFinished ? 0 : 4.2 }}
         className={cn(
           "fixed inset-x-0 top-0 z-40 transition-[background,backdrop-filter,border-color] duration-300",
           scrolled || open

@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 
 // Global flag to track if the initial site load sequence has finished.
 // This persists across page navigations within the same session.
-let hasInitialLoadFinished = false;
+export let hasInitialLoadFinished = false;
 
 export function SiteReveal({ children }: { children: React.ReactNode }) {
   // If the load sequence already finished, start visible immediately

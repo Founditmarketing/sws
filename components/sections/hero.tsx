@@ -6,7 +6,7 @@ import Link from "next/link";
 import { ArrowDown, ArrowRight } from "lucide-react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { CtaButton } from "@/components/brand/cta-button";
-import { SiteReveal } from "@/components/ui/site-reveal";
+import { SiteReveal, hasInitialLoadFinished } from "@/components/ui/site-reveal";
 import { siteConfig } from "@/lib/site";
 import { compactNumber } from "@/lib/utils";
 
@@ -80,33 +80,42 @@ export function Hero() {
         <motion.div 
           className="container-page relative z-10 flex min-h-[88vh] flex-col justify-end pb-6 pt-20 sm:pt-32 md:min-h-screen md:pb-10 md:pt-40"
           style={{ opacity: contentOpacity, y: contentY }}
+          initial="hidden"
+          animate="visible"
+          variants={{
+            hidden: {},
+            visible: {
+              transition: {
+                staggerChildren: 0.15,
+                delayChildren: typeof window !== "undefined" && hasInitialLoadFinished ? 0 : 4.2,
+              },
+            },
+          }}
         >
-          <Link
-            href="#safety"
-            className="group mb-4 inline-flex w-fit items-center gap-3 border border-bone-100/15 bg-graphite-900/60 px-3 py-1.5 backdrop-blur-sm transition-colors hover:border-amber-300/60 focus-visible:border-amber-300 focus-visible:outline-none md:mb-6"
-          >
-            <span className="relative flex h-2 w-2">
-              <span className="motion-reduce:hidden absolute inline-flex h-full w-full animate-ping rounded-full bg-amber-300 opacity-75" />
-              <span className="relative inline-flex h-2 w-2 rounded-full bg-amber-300" />
-            </span>
-            <span className="font-mono text-[9px] uppercase tracking-[0.12em] text-bone-100 transition-colors group-hover:text-amber-100 sm:text-[11px] sm:tracking-[0.18em]">
-              <span className="sm:hidden">Licensed &amp; Insured</span>
-              <span className="hidden sm:inline">Licensed - Insured - Self-Performing</span>
-            </span>
-            <ArrowRight
-              className="h-3 w-3 text-amber-300 transition-transform duration-200 group-hover:translate-x-0.5"
-              strokeWidth={2.6}
-            />
-          </Link>
+          <motion.div variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } } }}>
+            <Link
+              href="#safety"
+              className="group mb-4 inline-flex w-fit items-center gap-3 border border-bone-100/15 bg-graphite-900/60 px-3 py-1.5 backdrop-blur-sm transition-colors hover:border-amber-300/60 focus-visible:border-amber-300 focus-visible:outline-none md:mb-6"
+            >
+              <span className="relative flex h-2 w-2">
+                <span className="motion-reduce:hidden absolute inline-flex h-full w-full animate-ping rounded-full bg-amber-300 opacity-75" />
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-amber-300" />
+              </span>
+              <span className="font-mono text-[9px] uppercase tracking-[0.12em] text-bone-100 transition-colors group-hover:text-amber-100 sm:text-[11px] sm:tracking-[0.18em]">
+                <span className="sm:hidden">Licensed &amp; Insured</span>
+                <span className="hidden sm:inline">Licensed - Insured - Self-Performing</span>
+              </span>
+              <ArrowRight
+                className="h-3 w-3 text-amber-300 transition-transform duration-200 group-hover:translate-x-0.5"
+                strokeWidth={2.6}
+              />
+            </Link>
+          </motion.div>
 
-          {/* Round 5 audit fix #1: at lg+ the previous clamp(4.5rem,8vw,8rem) was
-              so large the H1 always wrapped to 3 lines and "commercial" orphaned
-              on its own line. Tightening to clamp(3.5rem,5.5vw,5.75rem) plus a
-              max-w-[18ch] cap forces the intentional 2-line wrap:
-                "We move earth at"
-                "commercial scale."
-              so the amber underline visually anchors the word it underlines. */}
-          <h1 className="font-display text-balance text-[clamp(2rem,5.4vw+1.05rem,3rem)] font-extrabold leading-[1.02] tracking-tight text-bone-100 sm:text-5xl sm:leading-[0.98] md:text-7xl md:leading-[0.95] lg:max-w-[18ch] lg:text-[clamp(3.5rem,5.5vw,5.75rem)] lg:leading-[0.95] xl:text-[clamp(4rem,5.2vw,6.25rem)]">
+          <motion.h1 
+            variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } } }}
+            className="font-display text-balance text-[clamp(2rem,5.4vw+1.05rem,3rem)] font-extrabold leading-[1.02] tracking-tight text-bone-100 sm:text-5xl sm:leading-[0.98] md:text-7xl md:leading-[0.95] lg:max-w-[18ch] lg:text-[clamp(3.5rem,5.5vw,5.75rem)] lg:leading-[0.95] xl:text-[clamp(4rem,5.2vw,6.25rem)]"
+          >
             <span className="block">
               We move earth at{" "}
               <span className="relative inline-block">
@@ -118,9 +127,9 @@ export function Hero() {
               </span>{" "}
               scale.
             </span>
-          </h1>
+          </motion.h1>
 
-          <div>
+          <motion.div variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } } }}>
             <div className="mt-4 max-w-2xl md:mt-6">
               <p className="text-pretty text-sm leading-snug text-bone-200 md:text-lg md:leading-relaxed md:text-graphite-300">
                 Sitework Specialist is Central Louisiana&apos;s commercial site work contractor. Mass
@@ -143,9 +152,12 @@ export function Hero() {
                 See Projects
               </CtaButton>
             </div>
-          </div>
+          </motion.div>
 
-          <div className="mt-6 grid grid-cols-2 overflow-hidden sm:grid-cols-2 md:mt-16 md:grid-cols-4">
+          <motion.div 
+            variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } } }}
+            className="mt-6 grid grid-cols-2 overflow-hidden sm:grid-cols-2 md:mt-16 md:grid-cols-4"
+          >
             {heroStats.map((stat, idx) => (
               <div
                 key={stat.k}
@@ -168,7 +180,7 @@ export function Hero() {
                 ) : null}
               </div>
             ))}
-          </div>
+          </motion.div>
         </motion.div>
 
         <Link
