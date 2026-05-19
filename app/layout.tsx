@@ -106,7 +106,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           Skip to content
         </a>
         <SiteHeader />
-        <main id="main" className="relative min-h-screen bg-graphite-950 max-sm:pb-24">
+        <main id="main" className="relative min-h-screen bg-graphite-950">
           {children}
         </main>
         <SiteFooter />
