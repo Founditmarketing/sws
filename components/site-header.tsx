@@ -142,7 +142,7 @@ export function SiteHeader() {
                 </button>
               </div>
 
-              <div className="flex flex-col px-5 py-8 md:px-8">
+              <div className="flex flex-col px-5 py-4 md:px-8">
                 {siteConfig.nav.map((item, i) => {
                   const active =
                     pathname === item.href ||
@@ -157,7 +157,7 @@ export function SiteHeader() {
                       <Link
                         href={item.href}
                         className={cn(
-                          "block border-b border-bone-100/5 py-5 font-display text-3xl font-bold tracking-tight transition-colors",
+                          "block border-b border-bone-100/5 py-3 font-display text-3xl font-bold tracking-tight transition-colors",
                           active ? "text-amber-300" : "text-bone-100",
                         )}
                         onClick={() => setOpen(false)}
