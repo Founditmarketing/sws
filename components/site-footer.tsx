@@ -14,7 +14,7 @@ export function SiteFooter() {
         className="pointer-events-none absolute inset-0 grid-noise opacity-[0.04]"
       />
       <div className="container-page relative">
-        <div className="grid gap-12 py-16 md:grid-cols-12">
+        <div className="grid gap-8 py-10 md:grid-cols-12 md:gap-12 md:py-16">
           <div className="md:col-span-4">
             <Logo />
             <p className="mt-6 max-w-sm text-pretty text-sm leading-relaxed text-graphite-300">
@@ -107,7 +107,7 @@ export function SiteFooter() {
               ))}
             </ul>
 
-            <h3 className="heading-eyebrow mb-4 mt-8">For procurement</h3>
+            <h3 className="heading-eyebrow mb-4 mt-6 md:mt-8">For procurement</h3>
             <ul className="flex flex-col gap-2 text-sm">
               <li>
                 <Link
@@ -166,7 +166,7 @@ export function SiteFooter() {
           </div>
         </div>
 
-        <div className="mt-4 flex flex-col items-start justify-between gap-4 border-t border-bone-100/10 py-6 text-xs text-graphite-300 md:mt-0 md:flex-row md:items-center">
+        <div className="mt-4 flex flex-col items-start justify-between gap-4 border-t border-bone-100/10 pt-4 pb-[calc(4.5rem+env(safe-area-inset-bottom))] text-xs text-graphite-300 md:mt-0 md:flex-row md:items-center md:py-6">
           <p>
             &copy; {year} {siteConfig.legalName}. All rights reserved.
           </p>

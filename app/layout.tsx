@@ -76,7 +76,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       className={`${inter.variable} ${archivo.variable} ${mono.variable} min-h-full bg-graphite-950 text-bone-100 dark`}
       suppressHydrationWarning
     >
-      <body className="min-h-dvh bg-graphite-950 text-bone-100 antialiased">
+      <body className="flex min-h-dvh flex-col bg-graphite-950 text-bone-100 antialiased">
         {/* Round 5 audit fix #11: organization JSON-LD is now a plain
             <script> tag rendered into the initial HTML on every route, not
             a next/script with afterInteractive (which deferred injection
@@ -106,7 +106,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           Skip to content
         </a>
         <SiteHeader />
-        <main id="main" className="relative min-h-screen bg-graphite-950">
+        <main id="main" className="relative flex-1 bg-graphite-950">
           {children}
         </main>
         <SiteFooter />

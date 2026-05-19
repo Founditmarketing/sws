@@ -32,9 +32,18 @@ export function MarketsGrid() {
           </figure>
         </div>
 
-        <ul className="mt-16 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <ul
+          className={
+            "mt-16 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 " +
+            "max-md:fleet-scroll max-md:flex max-md:snap-x max-md:snap-mandatory max-md:gap-3 max-md:overflow-y-hidden " +
+            "max-md:-mx-5 max-md:px-5 max-md:pb-1"
+          }
+        >
           {markets.map((m) => (
-            <li key={m.slug}>
+            <li
+              key={m.slug}
+              className="max-md:snap-start max-md:w-[min(21rem,calc(100vw-2.75rem))] max-md:flex-none"
+            >
               <Link
                 href={`/markets/${m.slug}`}
                 className="group relative isolate flex aspect-square flex-col justify-end overflow-hidden border border-bone-100/10 bg-graphite-800 p-6 md:aspect-[3/4]"

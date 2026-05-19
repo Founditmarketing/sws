@@ -8,7 +8,7 @@ export function FounderQuote() {
       aria-labelledby="founder-quote-heading"
       className="relative isolate w-full overflow-hidden border-b border-bone-100/10 bg-graphite-950"
     >
-      <div className="relative h-[70vh] min-h-[480px] w-full overflow-hidden">
+      <div className="relative h-[50vh] min-h-[360px] w-full overflow-hidden md:h-[70vh] md:min-h-[480px]">
         <div className="absolute inset-0 animate-ken-burns">
           <Image
             src={founderQuoteBackground}
@@ -30,7 +30,7 @@ export function FounderQuote() {
         />
 
         <div className="relative z-10 flex h-full items-center justify-center px-6">
-          <figure className="mx-auto flex max-w-[720px] flex-col items-center gap-8 text-center">
+          <figure className="mx-auto flex max-w-[720px] flex-col items-center gap-6 text-center md:gap-8">
             <span
               aria-hidden
               className="inline-block h-px w-12 bg-amber-300"
