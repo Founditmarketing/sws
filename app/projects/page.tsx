@@ -28,6 +28,7 @@ export default function ProjectsIndexPage() {
   return (
     <>
       <PageHero
+        image="/newsiteworkpics/siteworkprojectpic1.jpeg"
         eyebrow="Selected projects"
         title="Real sites. Real numbers. Real schedules."
         description="A snapshot of recent work across Central Louisiana. We can share full scope, references, and confidential project details on request."
@@ -54,13 +55,17 @@ export default function ProjectsIndexPage() {
           <LightboxGallery
             altPrefix="General project photo"
             images={[
+              "/newsiteworkpics/siteworkprojectvideo1.mp4",
               "/newsiteworkpics/siteworkprojectpic1.jpeg",
               "/newsiteworkpics/siteworkprojectpic2.JPEG",
+              "/newsiteworkpics/siteworkprojectvideo2.mp4",
               "/newsiteworkpics/siteworkprojectpic3.JPEG",
               "/newsiteworkpics/siteworkprojectpic4.JPEG",
+              "/newsiteworkpics/siteworkprojectvideo3.mp4",
               "/newsiteworkpics/siteworkprojectpic5.jpeg",
               "/newsiteworkpics/siteworkprojectpic6.jpeg",
               "/newsiteworkpics/siteworkprojectpic7.jpeg",
+              "/newsiteworkpics/siteworkprojectvideo4.mp4",
               "/newsiteworkpics/siteworkprojectpic8.jpeg",
               "/newsiteworkpics/siteworkprojectpic9.JPG",
               "/newsiteworkpics/siteworkprojectpic10.jpeg",

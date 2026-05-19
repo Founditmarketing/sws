@@ -9,6 +9,7 @@ import { buildMetadata, breadcrumbJsonLd } from "@/lib/seo";
 import { compactNumber, formatNumber } from "@/lib/utils";
 import { CtaBand } from "@/components/sections/cta-band";
 import { LightboxGallery } from "@/components/ui/lightbox-gallery";
+import { SiteReveal } from "@/components/ui/site-reveal";
 
 type Params = { slug: string };
 
@@ -41,15 +42,6 @@ export default async function ProjectDetailPage({
   const p = getProject(slug);
   if (!p) notFound();
 
-  const stats = [
-    p.cubicYards
-      ? { label: "Cubic Yards Moved", value: `${compactNumber(p.cubicYards)}` }
-      : null,
-    p.acres ? { label: "Acres", value: `${p.acres}` } : null,
-    { label: "Days On Schedule", value: `${p.durationDays}` },
-    { label: "Year Completed", value: `${p.yearCompleted}` },
-  ].filter(Boolean) as { label: string; value: string }[];
-
   return (
     <>
       <Script
@@ -66,7 +58,7 @@ export default async function ProjectDetailPage({
         }}
       />
 
-      <section className="relative isolate overflow-hidden border-b border-bone-100/10">
+      <section className="relative isolate overflow-hidden border-b border-bone-100/10 pb-16 pt-32 md:pb-20 md:pt-40">
         <div
           aria-hidden
           className="absolute inset-0 -z-10 bg-cover bg-center"
@@ -76,49 +68,35 @@ export default async function ProjectDetailPage({
         />
         <div aria-hidden className="absolute inset-0 -z-10 grid-noise opacity-[0.05]" />
 
-        <div className="container-page relative flex min-h-[80vh] flex-col justify-end pb-16 pt-32 md:pb-20 md:pt-40">
-          <Link
-            href="/projects"
-            className="mb-8 inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.2em] text-amber-300"
-          >
-            <ArrowLeft className="h-3 w-3" /> All projects
-          </Link>
-
-          <div className="flex flex-wrap items-center gap-3 mb-6">
+        <SiteReveal>
+          <div className="container-page relative">
             <Link
-              href={`/markets/${p.marketSlug}`}
-              className="inline-flex items-center gap-2 border border-amber-300/40 bg-amber-300/10 px-3 py-1.5 font-mono text-[10px] uppercase tracking-[0.2em] text-amber-300 transition-colors hover:bg-amber-300/15"
+              href="/projects"
+              className="mb-8 inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.2em] text-amber-300"
             >
-              {p.market}
+              <ArrowLeft className="h-3 w-3" /> All projects
             </Link>
-            <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-graphite-300">
-              {p.location}
-            </span>
-          </div>
 
-          <h1 className="max-w-5xl font-display text-balance text-4xl font-extrabold leading-[1.05] tracking-tight text-bone-100 md:text-6xl lg:text-7xl">
-            {p.title}
-          </h1>
-          <p className="mt-6 max-w-3xl text-pretty text-base leading-relaxed text-graphite-200 md:text-lg">
-            {p.summary}
-          </p>
-
-          <div className="mt-12 grid grid-cols-2 gap-px overflow-hidden border-y border-bone-100/15 bg-bone-100/15 md:grid-cols-4">
-            {stats.map((s) => (
-              <div
-                key={s.label}
-                className="flex flex-col gap-1 bg-graphite-950 px-5 py-5"
+            <div className="flex flex-wrap items-center gap-3 mb-6">
+              <Link
+                href={`/markets/${p.marketSlug}`}
+                className="inline-flex items-center gap-2 border border-amber-300/40 bg-amber-300/10 px-3 py-1.5 font-mono text-[10px] uppercase tracking-[0.2em] text-amber-300 transition-colors hover:bg-amber-300/15"
               >
-                <span className="font-display text-3xl font-extrabold leading-none text-bone-100 md:text-4xl">
-                  {s.value}
-                </span>
-                <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-graphite-300">
-                  {s.label}
-                </span>
-              </div>
-            ))}
+                {p.market}
+              </Link>
+              <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-graphite-300">
+                {p.location}
+              </span>
+            </div>
+
+            <h1 className="max-w-5xl font-display text-balance text-4xl font-extrabold leading-[1.05] tracking-tight text-bone-100 md:text-6xl lg:text-7xl">
+              {p.title}
+            </h1>
+            <p className="mt-6 max-w-3xl text-pretty text-base leading-relaxed text-graphite-200 md:text-lg">
+              {p.summary}
+            </p>
           </div>
-        </div>
+        </SiteReveal>
       </section>
 
       <section className="border-b border-bone-100/10 bg-graphite-950 py-20 md:py-24">
@@ -156,12 +134,6 @@ export default async function ProjectDetailPage({
               ) : null}
               <Detail label="Location" value={p.location} />
               <Detail label="Year" value={`${p.yearCompleted}`} />
-              {p.cubicYards ? (
-                <Detail label="Earthwork" value={`${formatNumber(p.cubicYards)} CY`} />
-              ) : null}
-              {p.acres ? (
-                <Detail label="Site Area" value={`${p.acres} acres`} />
-              ) : null}
             </dl>
           </div>
         </div>

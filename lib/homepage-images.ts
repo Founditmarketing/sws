@@ -19,15 +19,15 @@ export const featuredCaseStudyHero = "/img/case-study-substation.jpg";
 // half-day shoot. See README "Open items" #3.
 export const fleetCategoryHeroSrc: Record<FleetItem["category"], string> = {
   Dozers:
-    "/newsiteworkpics/siteworkprojectpic12.jpeg",
+    "/newsiteworkpics/siteworkprojectpic6.jpeg",
   Excavators:
-    "/newsiteworkpics/siteworkprojectpic13.jpeg",
+    "/newsiteworkpics/siteworkprojectpic7.jpeg",
   Graders:
-    "/newsiteworkpics/siteworkprojectpic14.JPG",
+    "/newsiteworkpics/siteworkprojectpic4.JPEG",
   "Articulated Trucks":
-    "/newsiteworkpics/siteworkprojectpic15.jpeg",
+    "/newsiteworkpics/siteworkprojectpic14.JPG",
   Compaction:
-    "/newsiteworkpics/siteworkprojectpic16.jpeg",
+    "/newsiteworkpics/siteworkprojectpic9.JPG",
   Support:
-    "/newsiteworkpics/siteworkprojectpic17.jpeg",
+    "/newsiteworkpics/siteworkprojectpic15.jpeg",
 };

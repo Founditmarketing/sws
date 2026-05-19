@@ -24,9 +24,10 @@ export default function FleetPage() {
   return (
     <>
       <PageHero
-        eyebrow="Fleet"
-        title="Owned iron. Trained operators. Production rates that hold."
-        description={`${total}+ self-owned pieces of heavy equipment, plus support fleet. We don't sub the production work - the iron and the operators are ours.`}
+        image="/newsiteworkpics/siteworkprojectpic15.jpeg"
+        eyebrow="The Fleet"
+        title="We don't rent our capability."
+        description="Heavy earthwork demands iron on demand. We own, maintain, and mobilize a self-sufficient fleet so your critical path isn't waiting on a rental house."
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "Fleet" }]}
       />
 

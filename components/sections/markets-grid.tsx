@@ -37,7 +37,7 @@ export function MarketsGrid() {
             <li key={m.slug}>
               <Link
                 href={`/markets/${m.slug}`}
-                className="group relative isolate flex aspect-[4/5] flex-col justify-end overflow-hidden border border-bone-100/10 bg-graphite-800 p-6 md:aspect-[3/4]"
+                className="group relative isolate flex aspect-square flex-col justify-end overflow-hidden border border-bone-100/10 bg-graphite-800 p-6 md:aspect-[3/4]"
               >
                 <div
                   aria-hidden

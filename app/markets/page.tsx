@@ -18,6 +18,7 @@ export default function MarketsIndexPage() {
   return (
     <>
       <PageHero
+        image="/newsiteworkpics/siteworkprojectpic11.jpeg"
         eyebrow="Markets we serve"
         title="Six industries. One bar for delivery."
         description="Each market we serve has its own definition of clean, safe, and on time. We adapt to yours - and we don't sub the production work."

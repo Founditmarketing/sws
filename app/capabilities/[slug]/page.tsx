@@ -82,6 +82,7 @@ export default async function CapabilityDetailPage({
       ) : null}
 
       <PageHero
+        image={cap.image}
         eyebrow={cap.category}
         title={cap.title}
         description={cap.outcome}

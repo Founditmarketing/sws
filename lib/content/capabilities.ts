@@ -5,6 +5,7 @@ export type Capability = {
   outcome: string;
   description: string;
   icon: CapabilityIcon;
+  image?: string;
   category: "Earthwork" | "Site Prep" | "Structures" | "Infrastructure";
   scope: string[];
   faqs: { question: string; answer: string }[];
@@ -33,6 +34,7 @@ export const capabilities: Capability[] = [
     description:
       "Bulk earthwork for industrial pads, commercial developments, and infrastructure programs. We mobilize fast with our own iron and operators, then track quantities, daily progress, and weather impact so the schedule doesn't slip.",
     icon: "excavation",
+    image: "/newsiteworkpics/siteworkprojectpic13.jpeg",
     category: "Earthwork",
     scope: [
       "Cut/fill optimization",
@@ -62,6 +64,7 @@ export const capabilities: Capability[] = [
     description:
       "Rough and finish grading to design tolerance for pads, parking, roads, and athletic fields. We hit grade the first time so your concrete and steel crews aren't waiting.",
     icon: "grading",
+    image: "/newsiteworkpics/siteworkprojectpic14.JPG",
     category: "Earthwork",
     scope: [
       "Rough grading to +/- 0.10'",
@@ -85,6 +88,7 @@ export const capabilities: Capability[] = [
     description:
       "From timbered tracts to overgrown industrial sites. We assess soils, drainage, and protected vegetation up front so the clearing plan doesn't blow up the schedule downstream.",
     icon: "clearing",
+    image: "/newsiteworkpics/siteworkprojectpic1.jpeg",
     category: "Site Prep",
     scope: [
       "Mulching and forestry mowing",
@@ -109,6 +113,7 @@ export const capabilities: Capability[] = [
     description:
       "Complete pad packages: clearing, demolition, earthwork, stabilization, drainage, and aggregate base. Engineered, tested, and certified before your vertical contractor hits the site.",
     icon: "padsite",
+    image: "/newsiteworkpics/siteworkprojectpic8.jpeg",
     category: "Site Prep",
     scope: [
       "Building pads to engineer surface",
@@ -133,6 +138,7 @@ export const capabilities: Capability[] = [
     description:
       "Permit-driven erosion and sediment control: silt fence, wattles, inlet protection, rock check dams, sediment basins, hydroseeding. We keep your LPDES coverage clean and your inspections boring.",
     icon: "erosion",
+    image: "/newsiteworkpics/siteworkprojectpic7.jpeg",
     category: "Site Prep",
     scope: [
       "SWPPP execution",
@@ -156,6 +162,7 @@ export const capabilities: Capability[] = [
     description:
       "Segmental retaining walls, sheet pile, riprap revetments, and concrete sea walls. We coordinate with your engineer of record and self-perform the install.",
     icon: "retaining",
+    image: "/newsiteworkpics/siteworkprojectpic5.jpeg",
     category: "Structures",
     scope: [
       "Segmental and modular block walls",
@@ -173,6 +180,7 @@ export const capabilities: Capability[] = [
     description:
       "Site concrete: slabs on grade, building footings, driveways, parking, sidewalks, curb and gutter. Flat where it should be flat, sloped where it should drain.",
     icon: "concrete",
+    image: "/newsiteworkpics/siteworkprojectpic18.jpeg",
     category: "Structures",
     scope: [
       "Slabs on grade",
@@ -190,6 +198,7 @@ export const capabilities: Capability[] = [
     description:
       "From private industrial haul roads to subdivision and parish roads. Subgrade through aggregate base, with options for asphalt or concrete coordination.",
     icon: "road",
+    image: "/newsiteworkpics/siteworkprojectpic16.jpeg",
     category: "Infrastructure",
     scope: [
       "Subgrade and base",
@@ -206,6 +215,7 @@ export const capabilities: Capability[] = [
     description:
       "Storm pipe, culverts, headwalls, ditching, and detention. We size, place, and tie back to grade so the next storm doesn't cost you a week.",
     icon: "culvert",
+    image: "/newsiteworkpics/siteworkprojectpic10.jpeg",
     category: "Infrastructure",
     scope: [
       "RCP, HDPE, and CMP",
@@ -222,6 +232,7 @@ export const capabilities: Capability[] = [
     description:
       "Detention, retention, irrigation, and recreation impoundments. Surveyed, designed for storage and discharge, and built with proper liners or compaction.",
     icon: "ponds",
+    image: "/newsiteworkpics/siteworkprojectpic2.JPEG",
     category: "Infrastructure",
     scope: ["Survey + design coordination", "Excavation and embankment", "Liners and seal", "Spillways"],
     faqs: [],
@@ -233,6 +244,7 @@ export const capabilities: Capability[] = [
     description:
       "From D6 through D9 class dozers - clearing, pushing, finish dozing. Operator-led production, GPS-guided where it makes sense.",
     icon: "dozer",
+    image: "/newsiteworkpics/siteworkprojectpic6.jpeg",
     category: "Earthwork",
     scope: ["D6/D8/D9 production dozing", "GPS finish dozing", "Reclamation and reshape"],
     faqs: [],
@@ -244,6 +256,7 @@ export const capabilities: Capability[] = [
     description:
       "Yards, parking lots, athletic fields, and ag tracts brought to engineered or working grade.",
     icon: "leveling",
+    image: "/newsiteworkpics/siteworkprojectpic4.JPEG",
     category: "Earthwork",
     scope: ["Engineered grading", "Working surface leveling", "Drainage rework"],
     faqs: [],

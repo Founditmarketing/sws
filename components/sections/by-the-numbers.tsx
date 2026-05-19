@@ -16,7 +16,7 @@ export function ByTheNumbers() {
           title="The kind of metrics that win commercial work."
           description="Eight years self-performing earthwork in Central Louisiana - measured, audited, and on the record."
         />
-        <div className="mt-16 grid grid-cols-2 gap-y-10 md:grid-cols-3 lg:grid-cols-5">
+        <div className="mt-12 grid grid-cols-2 gap-x-6 gap-y-10 md:mt-16 md:grid-cols-3 lg:grid-cols-5">
           <StatBlock 
             className="border-t-0 pt-0 md:border-l-0 md:pl-0"
             label="Years self-performing" 
@@ -24,6 +24,7 @@ export function ByTheNumbers() {
             suffix="+" 
           />
           <StatBlock
+            className="border-t-0 pt-0 md:border-t-0 md:pt-0"
             label="Cubic yards moved"
             value={s.cubicYardsMoved / 1_000_000}
             suffix="M+"

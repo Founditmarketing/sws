@@ -56,14 +56,7 @@ export function FeaturedProjects({ excludeSlugs }: { excludeSlugs?: string[] } =
                     {p.market}
                   </span>
                 </div>
-                <div className="absolute inset-x-4 bottom-4 flex min-w-0 snap-x snap-mandatory gap-6 overflow-x-auto overscroll-x-contain border-t border-bone-100/20 pt-3 [-webkit-overflow-scrolling:touch] md:grid md:grid-cols-3 md:gap-2 md:overflow-visible">
-                  {p.cubicYards ? (
-                    <Stat label="CY moved" value={`${compactNumber(p.cubicYards)}`} />
-                  ) : null}
-                  {p.acres ? <Stat label="Acres" value={`${p.acres}`} /> : null}
-                  <Stat label="Days" value={`${p.durationDays}`} />
                 </div>
-              </div>
               <div className="flex flex-1 flex-col gap-3 bg-graphite-900 p-6">
                 <div className="flex items-center justify-between text-xs text-graphite-300">
                   <span className="font-mono uppercase tracking-[0.18em]">{p.location}</span>

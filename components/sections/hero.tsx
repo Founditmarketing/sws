@@ -44,7 +44,12 @@ export function Hero() {
   return (
     <section ref={containerRef} className="relative isolate overflow-hidden border-b border-bone-100/10 bg-graphite-950">
       <motion.div aria-hidden className="absolute inset-0 -z-10" style={{ y: backgroundY }}>
-        <div className="absolute inset-0 -top-[6%] -bottom-[6%]">
+        <motion.div 
+          className="absolute inset-0 -top-[6%] -bottom-[6%]"
+          initial={{ scale: 1 }}
+          animate={{ scale: 1.08 }}
+          transition={{ duration: 20, ease: "linear", repeat: Infinity, repeatType: "reverse" }}
+        >
           <Image
             src={HERO_BACKDROP}
             alt=""
@@ -53,7 +58,7 @@ export function Hero() {
             sizes="100vw"
             className="object-cover"
           />
-        </div>
+        </motion.div>
 
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_55%,transparent_0%,rgba(6,7,9,0.45)_55%,rgba(6,7,9,0.85)_100%)]" />
         <div className="absolute inset-0 bg-gradient-to-b from-graphite-950/55 via-graphite-950/30 to-graphite-950" />

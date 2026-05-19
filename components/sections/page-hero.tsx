@@ -30,13 +30,15 @@ export function PageHero({
       )}
     >
       {image ? (
-        <div
-          aria-hidden
-          className="absolute inset-0 -z-10 bg-cover bg-center"
-          style={{
-            backgroundImage: `linear-gradient(180deg, rgba(6,7,9,0.65) 0%, rgba(6,7,9,0.92) 70%, rgba(6,7,9,1) 100%), url('${image}')`,
-          }}
-        />
+        <>
+          <div
+            aria-hidden
+            className="absolute inset-0 -z-10 bg-cover bg-center"
+            style={{ backgroundImage: `url('${image}')` }}
+          />
+          <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_50%_55%,transparent_0%,rgba(6,7,9,0.45)_55%,rgba(6,7,9,0.85)_100%)]" />
+          <div className="absolute inset-0 -z-10 bg-gradient-to-b from-graphite-950/65 via-graphite-950/40 to-graphite-950" />
+        </>
       ) : null}
       <div aria-hidden className="absolute inset-0 -z-10 grid-noise opacity-[0.05]" />
 

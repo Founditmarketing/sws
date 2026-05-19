@@ -54,9 +54,10 @@ export default function CareersPage() {
   return (
     <>
       <PageHero
+        image="/newsiteworkpics/siteworkprojectpic3.JPEG"
         eyebrow="Careers"
-        title="We're hiring people who care about doing the work right."
-        description="Strong wages, year-round work, and a foreman who'll back you up. Operators, foremen, drivers, and project managers across Central Louisiana."
+        title="If you can run it, we have a seat for you."
+        description="We're always looking for operators, foremen, and field hands who know how to move dirt safely and efficiently."
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "Careers" }]}
       >
         <div className="mt-4 flex flex-wrap items-center gap-4">

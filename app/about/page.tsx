@@ -19,9 +19,10 @@ export default function AboutPage() {
   return (
     <>
       <PageHero
-        eyebrow="About"
-        title="Eight years moving earth in Central Louisiana - on schedule."
-        description="We started as a dirt-and-dozer outfit and grew into the region's go-to commercial site work contractor. The work didn't change. The scale did."
+        image="/newsiteworkpics/siteworkprojectpic9.JPG"
+        eyebrow="Our Company"
+        title="Earthwork, owned and operated."
+        description="We started moving dirt because we were tired of waiting on contractors. Eight years later, we self-perform the heaviest scopes in Central Louisiana."
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "About" }]}
       />
 

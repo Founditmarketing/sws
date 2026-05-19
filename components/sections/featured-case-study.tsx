@@ -67,29 +67,7 @@ export function FeaturedCaseStudy() {
             {project.summary}
           </p>
 
-          <div className="mt-10 grid min-w-0 grid-cols-3 gap-x-3 gap-y-0 md:gap-0">
-            {project.cubicYards ? (
-              <StatBlock
-                label="CY moved"
-                value={project.cubicYards / 1000}
-                suffix="K"
-                decimals={0}
-                className="min-w-0 border-t-0 pt-4 md:border-l md:pt-0"
-              />
-            ) : null}
-            {project.acres ? (
-              <StatBlock
-                label="Acres"
-                value={project.acres}
-                className="min-w-0 border-t-0 pt-4 md:border-l md:pt-0"
-              />
-            ) : null}
-            <StatBlock
-              label="Days NTP"
-              value={project.durationDays}
-              className="min-w-0 border-t-0 pt-4 md:border-l md:pt-0"
-            />
-          </div>
+
 
           <Link
             href={`/projects/${project.slug}`}

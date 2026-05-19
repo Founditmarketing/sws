@@ -17,6 +17,7 @@ export default function RfqPage() {
   return (
     <>
       <PageHero
+        image="/newsiteworkpics/siteworkprojectpic10.jpeg"
         eyebrow="Request a Quote"
         title="Send us your project. We'll respond inside 24 hours."
         description="Four short steps. Your data is encrypted in transit and only goes to our project engineers."

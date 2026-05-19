@@ -24,6 +24,7 @@ export default function CapabilitiesIndexPage() {
   return (
     <>
       <PageHero
+        image="/newsiteworkpics/siteworkprojectpic13.jpeg"
         eyebrow="Capabilities"
         title="One contractor. The whole site package, self-performed."
         description="From timbered tracts to engineered, build-ready pads. We own the iron, train the operators, and answer for the schedule."

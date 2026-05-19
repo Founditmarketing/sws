@@ -80,6 +80,8 @@ export const projects: Project[] = [
     ],
     hero: "/newsiteworkpics/cypresspoint/cypresspointprojectpic1.JPG",
     gallery: [
+      "/newsiteworkpics/cypresspoint/cypresspointprojectvideo1.mp4",
+      "/newsiteworkpics/cypresspoint/cypresspointprojectpicvideo2.mp4",
       "/newsiteworkpics/cypresspoint/cypresspointprojectpic2.JPG",
       "/newsiteworkpics/cypresspoint/cypresspointprojectpic3.JPG",
       "/newsiteworkpics/cypresspoint/cypresspointprojectpic4.JPG",
