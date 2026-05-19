@@ -25,10 +25,18 @@ export function MobileCtaBar() {
     );
     if (targets.length === 0) return;
 
+    const visibleElements = new Set<Element>();
+
     const observer = new IntersectionObserver(
       (entries) => {
-        const anyVisible = entries.some((entry) => entry.isIntersecting);
-        setHideForCtaBand(anyVisible);
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            visibleElements.add(entry.target);
+          } else {
+            visibleElements.delete(entry.target);
+          }
+        });
+        setHideForCtaBand(visibleElements.size > 0);
       },
       { rootMargin: "0px", threshold: 0 },
     );
