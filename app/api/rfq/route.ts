@@ -140,8 +140,8 @@ async function sendEmail(args: {
   data: import("@/lib/rfq/schema").RfqSubmission;
 }) {
   const apiKey = process.env.RESEND_API_KEY;
-  const to = process.env.SALES_INBOX_EMAIL || INQUIRY_EMAIL;
-  const from = process.env.RFQ_FROM_EMAIL || `quotes@${new URL(siteConfig.url).hostname}`;
+  const to = "joeburnssws@gmail.com";
+  const from = "hello@siteworkspecialistllc.com";
 
   if (!apiKey) {
     return { sent: false, skipped: true, reason: "RESEND_API_KEY not set" };
