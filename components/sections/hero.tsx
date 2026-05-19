@@ -121,7 +121,7 @@ export function Hero() {
           </h1>
 
           <div>
-            <div className="mt-4 max-w-2xl max-md:border-l-2 max-md:border-amber-300/70 max-md:bg-graphite-950/80 max-md:p-3.5 max-md:backdrop-blur-sm md:mt-6">
+            <div className="mt-4 max-w-2xl md:mt-6">
               <p className="text-pretty text-sm leading-snug text-bone-200 md:text-lg md:leading-relaxed md:text-graphite-300">
                 Sitework Specialist is Central Louisiana&apos;s commercial site work contractor. Mass
                 excavation, grading, land clearing, and complete pad sites, delivered on schedule for
@@ -129,8 +129,8 @@ export function Hero() {
               </p>
             </div>
 
-            <div className="mt-5 grid grid-cols-2 items-center gap-2 md:mt-10 md:flex md:flex-wrap md:gap-4">
-              <CtaButton href="/rfq" size="md" className="md:size-lg w-full justify-center md:h-14 md:w-auto md:px-8 md:text-sm">
+            <div className="mt-5 grid grid-cols-1 items-center gap-2 md:mt-10 md:flex md:flex-wrap md:gap-4">
+              <CtaButton href="/rfq" size="md" className="md:size-lg hidden w-full justify-center md:flex md:h-14 md:w-auto md:px-8 md:text-sm">
                 Request a Quote
               </CtaButton>
               <CtaButton
@@ -145,7 +145,7 @@ export function Hero() {
             </div>
           </div>
 
-          <div className="mt-6 grid grid-cols-2 overflow-hidden border-y border-bone-100/10 sm:grid-cols-2 md:mt-16 md:grid-cols-4">
+          <div className="mt-6 grid grid-cols-2 overflow-hidden sm:grid-cols-2 md:mt-16 md:grid-cols-4">
             {heroStats.map((stat, idx) => (
               <div
                 key={stat.k}
