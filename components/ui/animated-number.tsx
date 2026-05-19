@@ -19,8 +19,9 @@ export function AnimatedNumber({
     stiffness: 100,
   });
   
-  // margin "-50px" ensures the animation starts when the element is slightly visible
-  const isInView = useInView(ref, { once: true, margin: "-50px" });
+  // margin "0px 0px -50px 0px" ensures the animation starts when the element is slightly visible from the bottom,
+  // without shrinking the left/right bounds (which causes bugs for elements near the screen edge on mobile).
+  const isInView = useInView(ref, { once: true, margin: "0px 0px -50px 0px" });
 
   useEffect(() => {
     if (isInView) {
