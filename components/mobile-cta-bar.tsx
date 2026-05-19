@@ -30,7 +30,7 @@ export function MobileCtaBar() {
         const anyVisible = entries.some((entry) => entry.isIntersecting);
         setHideForCtaBand(anyVisible);
       },
-      { rootMargin: "-15% 0px -25% 0px", threshold: 0 },
+      { rootMargin: "0px", threshold: 0 },
     );
 
     targets.forEach((target) => observer.observe(target));

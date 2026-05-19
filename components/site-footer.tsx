@@ -8,7 +8,7 @@ export function SiteFooter() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="relative border-t border-bone-100/10 bg-graphite-950 text-graphite-300">
+    <footer data-cta-band className="relative border-t border-bone-100/10 bg-graphite-950 text-graphite-300">
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0 grid-noise opacity-[0.04]"
@@ -166,7 +166,7 @@ export function SiteFooter() {
           </div>
         </div>
 
-        <div className="mt-4 flex flex-col items-start justify-between gap-4 border-t border-bone-100/10 pt-4 pb-[calc(4.5rem+env(safe-area-inset-bottom))] text-xs text-graphite-300 md:mt-0 md:flex-row md:items-center md:py-6">
+        <div className="mt-4 flex flex-col items-start justify-between gap-4 border-t border-bone-100/10 py-4 text-xs text-graphite-300 md:mt-0 md:flex-row md:items-center md:py-6">
           <p>
             &copy; {year} {siteConfig.legalName}. All rights reserved.
           </p>
