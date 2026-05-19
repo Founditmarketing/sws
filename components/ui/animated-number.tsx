@@ -6,9 +6,11 @@ import { useInView, useMotionValue, useSpring } from "framer-motion";
 export function AnimatedNumber({
   value,
   decimals = 0,
+  delay = 0,
 }: {
   value: number;
   decimals?: number;
+  delay?: number;
 }) {
   const ref = useRef<HTMLSpanElement>(null);
   const motionValue = useMotionValue(0);
@@ -22,9 +24,16 @@ export function AnimatedNumber({
 
   useEffect(() => {
     if (isInView) {
-      motionValue.set(value);
+      if (delay > 0) {
+        const timeout = setTimeout(() => {
+          motionValue.set(value);
+        }, delay * 1000);
+        return () => clearTimeout(timeout);
+      } else {
+        motionValue.set(value);
+      }
     }
-  }, [motionValue, isInView, value]);
+  }, [motionValue, isInView, value, delay]);
 
   useEffect(() => {
     springValue.on("change", (latest) => {

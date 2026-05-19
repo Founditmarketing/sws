@@ -170,7 +170,11 @@ export function Hero() {
                 }`}
               >
                 <span className="font-display text-xl font-extrabold leading-none tabular-nums text-bone-100 sm:text-3xl md:text-4xl">
-                  <AnimatedNumber value={stat.val} decimals={stat.decimals} />
+                  <AnimatedNumber 
+                    value={stat.val} 
+                    decimals={stat.decimals} 
+                    delay={typeof window !== "undefined" && hasInitialLoadFinished ? 0.3 + (idx * 0.1) : 4.8 + (idx * 0.1)} 
+                  />
                   {stat.suffix}
                 </span>
                 <span className="font-mono text-[9px] uppercase tracking-[0.18em] text-graphite-300 sm:text-[10px] sm:tracking-[0.2em]">
