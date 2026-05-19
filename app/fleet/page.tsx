@@ -44,8 +44,8 @@ export default function FleetPage() {
                 </span>
               </div>
 
-              <div className="overflow-hidden border border-bone-100/10">
-                <table className="w-full text-sm">
+              <div className="overflow-x-auto border border-bone-100/10">
+                <table className="w-full min-w-[600px] text-sm">
                   <thead className="bg-graphite-900 font-mono text-[10px] uppercase tracking-[0.2em] text-graphite-300">
                     <tr>
                       <th className="px-4 py-3 text-left">Make</th>
