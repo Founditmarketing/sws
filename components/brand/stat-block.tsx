@@ -1,5 +1,7 @@
 import { cn, formatNumber } from "@/lib/utils";
 
+import { AnimatedNumber } from "@/components/ui/animated-number";
+
 export function StatBlock({
   label,
   value,
@@ -17,14 +19,6 @@ export function StatBlock({
   caption?: string;
   className?: string;
 }) {
-  // Audit fix #9: counters feel SaaS-y on a contractor site, and intersection-
-  // based animation was reading a moving target between mounts (visible bug).
-  // Render the plain formatted number — restraint is on-brand.
-  const formatted = formatNumber(value, {
-    minimumFractionDigits: decimals ?? 0,
-    maximumFractionDigits: decimals ?? 0,
-  });
-
   return (
     <div
       className={cn(
@@ -34,7 +28,7 @@ export function StatBlock({
     >
       <span className="font-display text-3xl font-extrabold leading-none tracking-tight tabular-nums text-bone-100 sm:text-5xl md:text-6xl">
         {prefix}
-        {formatted}
+        <AnimatedNumber value={value} decimals={decimals} />
         {suffix}
       </span>
       <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-graphite-300">

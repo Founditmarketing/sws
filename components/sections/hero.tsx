@@ -8,7 +8,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { CtaButton } from "@/components/brand/cta-button";
 import { SiteReveal, hasInitialLoadFinished } from "@/components/ui/site-reveal";
 import { siteConfig } from "@/lib/site";
-import { compactNumber } from "@/lib/utils";
+import { AnimatedNumber } from "@/components/ui/animated-number";
 
 /** Reliable remote backdrop when `/public/hero/*` assets are absent (CDN + next.config remotePatterns). */
 const HERO_BACKDROP =
@@ -30,15 +30,17 @@ export function Hero() {
   const contentY = useTransform(scrollYProgress, [0, 0.7], ["0px", "-50px"]);
 
   const s = siteConfig.stats;
-  const heroStats: { k: string; v: string; caption?: string }[] = [
-    { k: "Years self-performing", v: `${s.yearsInBusiness}+` },
+  const heroStats: { k: string; val: number; decimals?: number; suffix?: string; caption?: string }[] = [
+    { k: "Years self-performing", val: s.yearsInBusiness, suffix: "+" },
     {
       k: "Cubic Yards Moved",
-      v: `${compactNumber(s.cubicYardsMoved)}+`,
+      val: s.cubicYardsMoved / 1000000,
+      decimals: 1,
+      suffix: "M+",
       caption: "Lifetime - since 2017",
     },
-    { k: "Coverage Radius", v: `${s.coverageRadiusMiles} mi` },
-    { k: "Safety EMR", v: s.safetyEMR.toFixed(2) },
+    { k: "Coverage Radius", val: s.coverageRadiusMiles, suffix: " mi" },
+    { k: "Safety EMR", val: s.safetyEMR, decimals: 2 },
   ];
 
   return (
@@ -168,7 +170,8 @@ export function Hero() {
                 }`}
               >
                 <span className="font-display text-xl font-extrabold leading-none tabular-nums text-bone-100 sm:text-3xl md:text-4xl">
-                  {stat.v}
+                  <AnimatedNumber value={stat.val} decimals={stat.decimals} />
+                  {stat.suffix}
                 </span>
                 <span className="font-mono text-[9px] uppercase tracking-[0.18em] text-graphite-300 sm:text-[10px] sm:tracking-[0.2em]">
                   {stat.k}

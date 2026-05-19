@@ -7,6 +7,7 @@ import { useEffect, useRef, useState } from "react";
 
 import { fleet, type FleetItem } from "@/lib/content/fleet";
 import { fleetCategoryHeroSrc } from "@/lib/homepage-images";
+import { AnimatedNumber } from "@/components/ui/animated-number";
 import { SectionHeader } from "@/components/brand/section-header";
 
 type FleetCategoryGroup = {
@@ -126,7 +127,7 @@ export function FleetSnapshot() {
                   Self-owned
                 </dt>
                 <dd className="font-display text-2xl font-extrabold leading-none tabular-nums text-bone-100">
-                  67
+                  <AnimatedNumber value={67} />
                 </dd>
               </div>
               <div className="flex flex-col gap-1 bg-graphite-900 px-3 py-3">
@@ -134,7 +135,7 @@ export function FleetSnapshot() {
                   Yards
                 </dt>
                 <dd className="font-display text-2xl font-extrabold leading-none tabular-nums text-bone-100">
-                  4
+                  <AnimatedNumber value={4} />M
                 </dd>
               </div>
               <div className="flex flex-col gap-1 bg-graphite-900 px-3 py-3">
@@ -142,7 +143,7 @@ export function FleetSnapshot() {
                   GPS-eq.
                 </dt>
                 <dd className="font-display text-2xl font-extrabold leading-none tabular-nums text-bone-100">
-                  12
+                  <AnimatedNumber value={12} />
                 </dd>
               </div>
             </dl>
