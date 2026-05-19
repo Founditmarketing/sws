@@ -1,4 +1,4 @@
-import { cn, formatNumber } from "@/lib/utils";
+import { cn } from "@/lib/utils";
 
 import { AnimatedNumber } from "@/components/ui/animated-number";
 

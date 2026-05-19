@@ -9,7 +9,6 @@ import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { MobileCtaBar } from "@/components/mobile-cta-bar";
 import { LoadingScreen } from "@/components/ui/loading-screen";
-import { SiteReveal } from "@/components/ui/site-reveal";
 
 import "./globals.css";
 

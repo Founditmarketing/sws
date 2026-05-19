@@ -3,7 +3,6 @@ import { ArrowUpRight } from "lucide-react";
 
 import { featuredProjects } from "@/lib/content/projects";
 import { SectionHeader } from "@/components/brand/section-header";
-import { compactNumber } from "@/lib/utils";
 
 export function FeaturedProjects({ excludeSlugs }: { excludeSlugs?: string[] } = {}) {
   const exclude = new Set(excludeSlugs ?? []);
@@ -79,15 +78,3 @@ export function FeaturedProjects({ excludeSlugs }: { excludeSlugs?: string[] } =
   );
 }
 
-function Stat({ label, value }: { label: string; value: string }) {
-  return (
-    <div className="flex min-w-[3.5rem] shrink-0 flex-col md:min-w-0">
-      <span className="font-display text-lg font-extrabold tracking-tight text-bone-100">
-        {value}
-      </span>
-      <span className="font-mono text-[9px] uppercase tracking-[0.22em] text-graphite-300">
-        {label}
-      </span>
-    </div>
-  );
-}

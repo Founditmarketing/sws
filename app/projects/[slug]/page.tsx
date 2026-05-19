@@ -6,7 +6,6 @@ import { ArrowLeft, ArrowUpRight, Quote } from "lucide-react";
 
 import { projects, getProject } from "@/lib/content/projects";
 import { buildMetadata, breadcrumbJsonLd } from "@/lib/seo";
-import { compactNumber, formatNumber } from "@/lib/utils";
 import { CtaBand } from "@/components/sections/cta-band";
 import { LightboxGallery } from "@/components/ui/lightbox-gallery";
 import { SiteReveal } from "@/components/ui/site-reveal";

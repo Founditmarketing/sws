@@ -19,8 +19,6 @@ export default function FleetPage() {
     return acc;
   }, {});
 
-  const total = fleet.reduce((sum, f) => sum + f.qty, 0);
-
   return (
     <>
       <PageHero

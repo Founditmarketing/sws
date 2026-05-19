@@ -12,7 +12,6 @@ import {
   type Project,
   type ScopeTag,
 } from "@/lib/content/projects";
-import { compactNumber } from "@/lib/utils";
 import { cn } from "@/lib/utils";
 
 type MarketOption = { slug: string; label: string };
@@ -320,18 +319,6 @@ function ProjectsResults({ projects }: { projects: Project[] }) {
   );
 }
 
-function Stat({ label, value }: { label: string; value: string }) {
-  return (
-    <div className="flex flex-col">
-      <span className="font-display text-lg font-extrabold tracking-tight text-bone-100">
-        {value}
-      </span>
-      <span className="font-mono text-[9px] uppercase tracking-[0.22em] text-graphite-300">
-        {label}
-      </span>
-    </div>
-  );
-}
 
 type Selection = {
   market: string | null;

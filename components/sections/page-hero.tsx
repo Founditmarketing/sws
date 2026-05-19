@@ -4,7 +4,6 @@ import { cn } from "@/lib/utils";
 import { SiteReveal } from "@/components/ui/site-reveal";
 
 export function PageHero({
-  eyebrow,
   title,
   description,
   breadcrumbs,

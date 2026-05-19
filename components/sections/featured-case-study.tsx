@@ -2,7 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 
-import { StatBlock } from "@/components/brand/stat-block";
 import { getProject } from "@/lib/content/projects";
 import { featuredCaseStudyHero } from "@/lib/homepage-images";
 
