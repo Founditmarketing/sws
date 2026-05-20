@@ -61,12 +61,10 @@ export function CoverageMap() {
               className="max-w-md"
             />
 
-            {/* Round 5 audit fix #2: "Recently mobilized" mini-list — small
-                contextual block in the section head area at lg+. Hidden on
-                mobile/tablet so the existing layout is preserved.
+            {/* Round 5 audit fix #2: "Recently mobilized" mini-list.
                 Mobilization entries below are placeholder values pending
                 Joe's confirmation: [VERIFY-WITH-JOE]. */}
-            <div className="mt-8 hidden lg:block">
+            <div className="mt-8">
               <span className="font-mono text-[10px] uppercase tracking-[0.22em] text-amber-300">
                 Recently mobilized
               </span>
@@ -85,39 +83,6 @@ export function CoverageMap() {
                   </li>
                 ))}
               </ul>
-            </div>
-
-            <ul className="mt-8 grid grid-cols-2 gap-3 text-sm">
-              {siteConfig.offices.map((o) => (
-                <li
-                  key={o.cityState}
-                  className="flex items-start gap-3 border border-bone-100/10 px-3 py-2.5"
-                >
-                  <span
-                    className="mt-1.5 h-2 w-2 flex-none bg-amber-300"
-                    aria-hidden
-                  />
-                  <span>
-                    <span className="block font-medium text-bone-100">{o.city}</span>
-                    <span className="block text-xs text-graphite-300">{o.cityState}</span>
-                    {o.label ? (
-                      <span className="mt-1 block font-mono text-[9px] uppercase tracking-[0.2em] text-amber-300">
-                        {o.label}
-                      </span>
-                    ) : null}
-                  </span>
-                </li>
-              ))}
-            </ul>
-
-            <div className="mt-8 border-t border-bone-100/10 pt-6">
-              <span className="font-mono text-[10px] uppercase tracking-[0.22em] text-amber-300">
-                Service radius
-              </span>
-              <p className="mt-2 text-sm text-graphite-300">
-                {siteConfig.stats.coverageRadiusMiles}-mile typical service radius. Larger
-                projects considered case-by-case.
-              </p>
             </div>
           </div>
 
@@ -307,9 +272,6 @@ export function CoverageMap() {
               </div>
             </div>
 
-            <p className="mt-4 font-mono text-[10px] uppercase tracking-[0.22em] text-graphite-400">
-              Headquarters: Alexandria, LA &middot; Yards: Pineville &middot; Jonesville &middot; Natchez
-            </p>
 
             <Link
               href="/why-central-louisiana"
